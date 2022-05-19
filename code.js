@@ -1,13 +1,16 @@
 // alert("działa");
 
 let button = document.querySelector(".button--js");
-let counter = 0;
+let counter = 1;
 
 button = document.addEventListener("click", () => {
   const divElement = document.createElement("div");
   divElement.textContent = `${counter}`;
-  divElement.className = "square";
-  document.querySelector("div").appendChild(divElement);
+  if (counter % 5 == 0) {
+    divElement.className = "circle";
+  } else {
+    divElement.className = "square";
+  }
   counter++;
-  console.log("kliknąłem");
+  document.querySelector("div").appendChild(divElement);
 });
